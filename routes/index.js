@@ -4,17 +4,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
-      title: 'First Express Page',
-        message: 'This works pretty well so far'});
+      title: 'Directory for Breweries',
+        message: 'Please login to edit your brewery information or Register to add your brewery to the directory'});
 });
 
-/* GET random page */
-router.get('/random', function(req, res, next) {
-   
-    var ranNum = Math.random();
-    res.render('random', { title: 'Random',
-                          ranNum: ranNum });
-});
+
 
 // make this public so the rest of app can see it
 module.exports = router;
