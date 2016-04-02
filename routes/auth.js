@@ -18,16 +18,15 @@ passport.deserializeUser(function(id, done) {
 });
 
 // GET login - show login form
-router.get('/login', isLoggedIn, function(req, res, next) {
+router.get('/login', function(req, res, next) {
     // store the session messages in a local variable
     var messages = req.session.messages || [];
-
     // clear the session messages
     req.session.messages = [];
 
     // check if user is already logged in
     if (req.isAuthenticated()) {
-        res.redirect('auth/brewerys');
+        res.redirect('auth/welcome');
     }
     else {
         // show the login page and pass in any messages we may have
@@ -42,7 +41,7 @@ router.get('/login', isLoggedIn, function(req, res, next) {
 
 // POST login - validate user
  router.post('/login', passport.authenticate('local', {
-    successRedirect: 'auth/brewerys',
+    successRedirect: '/auth/welcome',
     failureRedirect: '/auth/login',
     failureMessage: 'Invalid Login'
 }));
@@ -56,12 +55,19 @@ router.get('/register', function(req, res, next) {
 
 // GET brewery - show brewerys page for authenticated users
 router.get('/brewery', isLoggedIn, function(req, res, next) {
-   res.render('auth/brewerys', {
+   res.render('auth/welcome', {
        title: 'Brewerys',
        user: req.user
    });
 });
 
+// GET welcome - show welome page for authenticated users
+router.get('/welcome', isLoggedIn, function(req, res, next) {
+   res.render('auth/welcome', {
+       title: 'Welcome',
+       user: req.user
+   });
+});
 // POST register - save new user
 router.post('/register', function(req, res, next) {
     Account.register(new Account({ username: req.body.username }), req.body.password, function(err, account) {

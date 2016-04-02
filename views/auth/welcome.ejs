@@ -1,9 +1,8 @@
 <%- include ../partials/header.ejs %>
 
 <main class="container">
-    <h1>Brewerys</h1>
 
-    <p>Welcome, <%= user.username %></p>
+    <h1>Welcome, <%= user.username %></h1>
 
     <a href="/brewerys/add" title="Add brewery">
     <button class="btn">
@@ -23,7 +22,7 @@
             </li>
         <% } %>
     </ul>
+
 </main>
 
-</body>
-</html>
+<%- include ../partials/footer.ejs %>
