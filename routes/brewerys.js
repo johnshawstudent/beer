@@ -24,6 +24,7 @@ router.get('/', isLoggedIn, function(req, res, next) {
     });
 });
 
+
 // GET handler for add to display a blank form
 router.get('/add', isLoggedIn, function(req, res, next) {
     res.render('brewerys/add', {
@@ -51,7 +52,7 @@ router.get('/:id', isLoggedIn, function(req, res, next) {
     var id = req.params.id;
 
     // look up the selected brewery
-    brewery.findById(id,  function(err, brewery) {
+    brewery.findById(id, function(err, brewery) {
        if (err) {
            console.log(err);
            res.end(err);
@@ -59,7 +60,7 @@ router.get('/:id', isLoggedIn, function(req, res, next) {
         else {
            // show the edit view
            res.render('brewerys/edit', {
-               title: 'brewery Details',
+               title: 'Brewery Details',
                brewery: brewery
            });
        }

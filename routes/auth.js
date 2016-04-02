@@ -18,7 +18,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 // GET login - show login form
-router.get('/login', function(req, res, next) {
+router.get('/login', isLoggedIn, function(req, res, next) {
     // store the session messages in a local variable
     var messages = req.session.messages || [];
 
@@ -27,7 +27,7 @@ router.get('/login', function(req, res, next) {
 
     // check if user is already logged in
     if (req.isAuthenticated()) {
-        res.redirect('brewerys');
+        res.redirect('auth/brewerys');
     }
     else {
         // show the login page and pass in any messages we may have
@@ -42,7 +42,7 @@ router.get('/login', function(req, res, next) {
 
 // POST login - validate user
  router.post('/login', passport.authenticate('local', {
-    successRedirect: '/brewerys',
+    successRedirect: 'auth/brewerys',
     failureRedirect: '/auth/login',
     failureMessage: 'Invalid Login'
 }));
@@ -54,10 +54,10 @@ router.get('/register', function(req, res, next) {
    });
 });
 
-// GET brewery - show welome page for authenticated users
+// GET brewery - show brewerys page for authenticated users
 router.get('/brewery', isLoggedIn, function(req, res, next) {
-   res.render('brewerys', {
-       title: 'brewerys',
+   res.render('auth/brewerys', {
+       title: 'Brewerys',
        user: req.user
    });
 });
@@ -69,9 +69,6 @@ router.post('/register', function(req, res, next) {
            return res.render('auth/register', { title: 'Register' });
         }
         else {
-            /*req.login(account, function(err) {
-                res.redirect('/articles');
-            });*/
             res.redirect('/auth/login');
         }
     });
@@ -79,8 +76,6 @@ router.post('/register', function(req, res, next) {
 
 // GET logout
 router.get('/logout', function(req, res, next) {
-    // we can use either of these
-    //req.session.destroy();
     req.logout();
     res.redirect('/');
 });
