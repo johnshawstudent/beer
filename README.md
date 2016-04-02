@@ -1,5 +1,2 @@
-# comp2106-lesson8
+# directory for breweries
 
-Adding Delete functionality
-
-Setting up Passport for Authentication
