@@ -41,7 +41,6 @@ router.get('/login', function(req, res, next) {
 });
 
 // POST login - validate user
-
  router.post('/login', passport.authenticate('local', {
     successRedirect: '/brewerys',
     failureRedirect: '/auth/login',
@@ -86,7 +85,7 @@ router.get('/logout', function(req, res, next) {
     res.redirect('/');
 });
 
-// auth check
+// authorization check - is user logged in
 function isLoggedIn(req, res, next) {
 
     // is the user authenticated?

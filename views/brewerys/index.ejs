@@ -3,14 +3,21 @@
 <main class="container">
     <h1>Brewerys</h1>
 
-    <a href="/brewerys/add" title="Add brewery">Add a new brewery</a>
+    <a href="/brewerys/add" title="Add brewery">
+    <button class="btn">
+    Add a new brewery
+    </button></a>
 
-    <ul class="list-group">
+    <ul class="brewery-list">
         <% for (var i = 0; i < brewerys.length; i++) { %>
-            <li class="list-group-item">
-                <!-- link to /artices/:id -->
-                <a href="/brewerys/<%= brewerys[i]._id%>" title="Read More">
-                    <%= brewerys[i].title %></a>
+            <li class="brewery-list-item">
+                <!-- link to /brewerys/:id -->
+                <h4><a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
+                    <%= brewerys[i].title %></a></h4>
+            </li>
+            <li class="brewey-details">
+                <a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
+                <%= brewerys[i].details %>More details</a>
             </li>
         <% } %>
     </ul>
