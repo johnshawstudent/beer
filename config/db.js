@@ -5,5 +5,5 @@ module.exports = {
     // 'url': 'mongodb://localhost/brewery'
 
     // live on mLab
-    'url': 'mongodb://johngolf2000:pass123@ds013290.mlab.com:13290/brewery'
+    'url': 'mongodb://john:pass123@ds013290.mlab.com:13290/brewery'
 };

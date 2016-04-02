@@ -3,6 +3,10 @@
 <main class="container">
     <h1>Login</h1>
 
+    <% if (messages.length > 0) { %>
+        <div class="invalid invalid-login"><%= messages %></div>
+        <% } %>
+
     <form method="post" action="/auth/login">
         <fieldset>
             <label for="username">Username: *</label>

@@ -1,0 +1,20 @@
+<%- include ../partials/header.ejs %>
+
+<main class="container">
+    <h1>Brewerys</h1>
+
+    <a href="/brewerys/add" title="Add brewery">Add a new brewery</a>
+
+    <ul class="list-group">
+        <% for (var i = 0; i < brewerys.length; i++) { %>
+            <li class="list-group-item">
+                <!-- link to /artices/:id -->
+                <a href="/brewerys/<%= brewerys[i]._id%>" title="Read More">
+                    <%= brewerys[i].title %></a>
+            </li>
+        <% } %>
+    </ul>
+</main>
+
+</body>
+</html>

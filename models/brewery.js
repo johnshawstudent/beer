@@ -1,8 +1,8 @@
 // link to mongoose
 var mongoose = require('mongoose');
 
-// define the article schema
-var articleSchema = new mongoose.Schema({
+// define the brewery schema
+var brewerySchema = new mongoose.Schema({
    created: {
        type: Date,
        default: Date.now
@@ -20,4 +20,4 @@ var articleSchema = new mongoose.Schema({
 });
 
 // make it public
-module.exports = mongoose.model('Article', articleSchema);
+module.exports = mongoose.model('brewery', brewerySchema);

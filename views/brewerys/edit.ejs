@@ -1,0 +1,33 @@
+<%- include ../partials/header.ejs %>
+
+<main class="container">
+    <h1>brewery Details</h1>
+    <form method="post" action="<%= brewery._id %>">
+        <fieldset class="form-group">
+            <label for="title">Title: *</label>
+            <input name="title" id="title" required value="<%= brewery.title %>" />
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="content">Content: *</label>
+            <textarea name="content" id="content" required><%= brewery.content %>
+            </textarea>
+        </fieldset>
+
+
+
+
+
+
+        
+        <div>
+            <%= brewery.created %>
+        </div>
+        <button class="waves-effect waves-light btn">Save</button>
+
+        <a href="/brewerys/delete/<%= brewery._id %>" title="Delete" class="confirmation">
+            <button class="waves-effect waves-light red" type="button">Delete</button>
+        </a>
+    </form>
+</main>
+
+<%- include ../partials/footer.ejs %>
