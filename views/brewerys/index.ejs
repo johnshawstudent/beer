@@ -3,9 +3,8 @@
 <main class="container">
     <h1>Brewerys</h1>
 
-    <p>Welcome, <%= user.username %></p>
-
     <a href="/brewerys/add" title="Add brewery">
+
     <button class="btn">
     Add a new brewery
     </button></a>
@@ -17,9 +16,13 @@
                 <h4><a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
                     <%= brewerys[i].title %></a></h4>
             </li>
-            <li class="brewey-details">
-                <a href="/brewerys/<%= brewerys[i].content%>" title="Brewery Details">
-                <%= brewerys[i].details %>More details</a>
+            <li class="brewery-details">
+                <a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
+                <%= brewerys[i].content %></a>
+            </li>
+            <li class="brewery-details">
+                <a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
+                <%= brewerys[i].beertypes %></a>
             </li>
         <% } %>
     </ul>

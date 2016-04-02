@@ -53,7 +53,7 @@ router.get('/register', function(req, res, next) {
    });
 });
 
-// GET brewery - show brewerys page for authenticated users
+// GET brewery - show welcome page for authenticated users
 router.get('/brewery', isLoggedIn, function(req, res, next) {
    res.render('auth/welcome', {
        title: 'Brewerys',

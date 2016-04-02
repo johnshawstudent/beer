@@ -16,8 +16,24 @@ var brewerySchema = new mongoose.Schema({
     content: {
         type: String,
         default: ''
+    },
+    beertypes: {
+      type: String,
+      default: ''
+    }, 
+    city: {
+      type: String,
+      default: ''
+    },
+    phone: {
+      type: String,
+      default: ''
+    },
+    yearfounded: {
+      type: Number,
+      default: ''
     }
 });
 
 // make it public
-module.exports = mongoose.model('brewery', brewerySchema);
+module.exports = mongoose.model('Brewery', brewerySchema);

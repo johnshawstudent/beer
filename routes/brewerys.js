@@ -38,7 +38,8 @@ router.post('/add', isLoggedIn, function(req, res, next) {
     // save a new brewery using our brewery model and mongoose
     brewery.create( {
             title: req.body.title,
-            content: req.body.content
+            content: req.body.content,
+            beertypes: req.body.beertypes
         }
     );
 
@@ -73,10 +74,11 @@ router.post('/:id', isLoggedIn, function(req, res, next) {
     var id = req.params.id;
 
     // fill the brewery object
-    var brewery = new brewery( {
+    var brewery = new Brewery( {
         _id: id,
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        beertypes: req.body.beertypes
     });
 
     // use mongoose and our brewery model to update

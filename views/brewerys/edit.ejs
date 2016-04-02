@@ -12,20 +12,27 @@
             <textarea name="content" id="content" required><%= brewery.content %>
             </textarea>
         </fieldset>
+        <fieldset class="form-group">
+            <label for="beertypes">Types of Beer: *</label>
+            <textarea name="beertypes" id="beertypes"><%= brewery.beertypes %></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="city">City: *</label>
+            <textarea name="city" id="city"><%= brewery.city %></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="phone">Phone: *</label>
+            <textarea name="phone" id="phone"><%= brewery.phone %></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="yearfounded">Year Founded: *</label>
+            <textarea name="yearfounded" id="yearfounded"><%= brewery.yearfounded %></textarea>
+        </fieldset>
 
-
-
-
-
-
-
-        <div>
-            <%= brewery.created %>
-        </div>
         <button class="waves-effect waves-light btn">Save</button>
 
         <a href="/brewerys/delete/<%= brewery._id %>" title="Delete" class="confirmation">
-            <button class="waves-effect waves-light red" type="button">Delete</button>
+            <button class="waves-effect waves-light btn red" type="button">Delete</button>
         </a>
     </form>
 </main>

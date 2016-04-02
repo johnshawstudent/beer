@@ -4,24 +4,7 @@
 
     <h1>Welcome, <%= user.username %></h1>
 
-    <a href="/brewerys/add" title="Add brewery">
-    <button class="btn">
-    Add a new brewery
-    </button></a>
-
-    <ul class="brewery-list">
-        <% for (var i = 0; i < brewerys.length; i++) { %>
-            <li class="brewery-list-item">
-                <!-- link to /brewerys/:id -->
-                <h4><a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
-                    <%= brewerys[i].title %></a></h4>
-            </li>
-            <li class="brewey-details">
-                <a href="/brewerys/<%= brewerys[i].content%>" title="Brewery Details">
-                <%= brewerys[i].details %>More details</a>
-            </li>
-        <% } %>
-    </ul>
+	<a href="/brewerys">Add or edit brewery info</a>
 
 </main>
 

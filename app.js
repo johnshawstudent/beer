@@ -54,7 +54,6 @@ passport.serializeUser(Account.serializeUser);
 passport.deserializeUser(Account.deserializeUser);
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/brewerys', brewerys);
 app.use('/auth', auth);
 
