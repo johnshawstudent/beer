@@ -37,7 +37,7 @@ app.use(flash());
 
 // passport config section
 app.use(session({
-  secret: 'lesson8 auth',
+  secret: 'beer auth',
   resave: true,
   saveUninitialized: false
 }));
