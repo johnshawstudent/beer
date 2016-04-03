@@ -19,3 +19,11 @@ a {
 .brewery-list li {
 	margin-bottom: 20px;
 }
+td.brewery-title:first-child {
+    width: 100px;
+    font-size: 1.3em;
+}
+table td {
+	vertical-align: top;
+	padding: 5px;
+}
