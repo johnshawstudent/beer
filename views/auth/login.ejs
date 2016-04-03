@@ -2,7 +2,7 @@
 
 <main class="container">
     <h1>Login</h1>
-
+<p class="center"><i>You must login to edit the directory</i></p>
     <% if (messages.length > 0) { %>
         <div class="invalid invalid-login"><%= messages %></div>
         <% } %>
@@ -16,10 +16,11 @@
             <label for="password">Password: *</label>
             <input name="password" id="password" type="password" required />
         </fieldset>
-
+<div class="buttons center">
         <button class="waves-effect waves-light btn">Login</button>
         <hr />
         Need access?  <a href="/auth/register" title="Register">Register</a>
+        </div>
     </form>
 
 </main>

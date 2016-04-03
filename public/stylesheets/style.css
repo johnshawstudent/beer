@@ -41,7 +41,7 @@ table {
 	margin-bottom: 20px;
 }
 table td {
-	vertical-align: top;
+	vertical-align: center;
 	padding: 5px;
 }
 td.brewery-beertypes {

@@ -1,47 +1,6 @@
 <%- include ../partials/header.ejs %>
 <main class="container">
 <h1>Brewerys</h1>
-<div class="buttons center">
-    <a href="/brewerys/add" title="Add brewery">
-        <button class="btn">
-        Add a new brewery
-    </button></a>
-</div>
-<table class="brewery-list">
-    <thead><tr><td>Brewery</td><td>About</td><td>Types of Beer</td><td>Location</td><td>Phone Number</td><td>Established</td><td></td></tr></thead>
-    <% for (var i = 0; i < brewerys.length; i++) { %>
-    <tr>
-        <td class="brewery-title">
-            <!-- link to /brewerys/:id -->
-            <a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
-            <%= brewerys[i].title %></a>
-        </td>
-        <td class="brewery-about">
-            <%= brewerys[i].about %>
-        </td>
-        <td class="brewery-beertypes">
-        <%= brewerys[i].beertypes %></a>
-    </td>
-    <td class="brewery-city">
-    <%= brewerys[i].city %></a>
-</td>
-<td class="brewery-phone">
-<%= brewerys[i].phone %></a>
-</td>
-<td class="brewery-yearfounded">
-<%= brewerys[i].yearfounded %></a>
-</td>
-<td class="brewery-yearfounded">
-<a href="/brewerys/<%= brewerys[i]._id%>"><button class="waves-effect waves-light btn-small btn">Edit</button></a>
-</td>
-</tr>
-<% } %>
-</table>
-<div class="buttons center">
-<a href="/brewerys/add" title="Add brewery">
-<button class="btn">
-Add a new brewery
-</button></a>
-</div>
-</main>
+
+
 <%- include ../partials/footer.ejs %>
