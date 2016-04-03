@@ -17,7 +17,7 @@ router.get('/', isLoggedIn, function(req, res, next) {
             // show the view and pass the data to it
             res.render('brewerys/index', {
 
-                title: 'brewerys',
+                title: 'Brewerys',
                 brewerys: brewerys
             });
         }
@@ -36,10 +36,13 @@ router.get('/add', isLoggedIn, function(req, res, next) {
 router.post('/add', isLoggedIn, function(req, res, next) {
 
     // save a new brewery using our brewery model and mongoose
-    brewery.create( {
+    Brewery.create( {
             title: req.body.title,
-            content: req.body.content,
-            beertypes: req.body.beertypes
+            about: req.body.about,
+            beertypes: req.body.beertypes,
+            city: req.body.city,
+            phone: req.body.phone,
+            yearfounded: req.body.yearfounded
         }
     );
 
@@ -53,7 +56,7 @@ router.get('/:id', isLoggedIn, function(req, res, next) {
     var id = req.params.id;
 
     // look up the selected brewery
-    brewery.findById(id, function(err, brewery) {
+    Brewery.findById(id, function(err, brewery) {
        if (err) {
            console.log(err);
            res.end(err);
@@ -77,12 +80,16 @@ router.post('/:id', isLoggedIn, function(req, res, next) {
     var brewery = new Brewery( {
         _id: id,
         title: req.body.title,
-        content: req.body.content,
-        beertypes: req.body.beertypes
+        about: req.body.about,
+        beertypes: req.body.beertypes,
+        city: req.body.city,
+        phone: req.body.phone,
+        yearfounded: req.body.yearfounded
+
     });
 
     // use mongoose and our brewery model to update
-    brewery.update( { _id: id }, brewery,  function(err) {
+    Brewery.update( { _id: id }, brewery,  function(err) {
         if (err) {
             console.log(err)
             res.end(err);
@@ -100,7 +107,7 @@ router.get('/delete/:id', isLoggedIn, function(req, res, next) {
 
     console.log('trying to delete');
 
-    brewery.remove({ _id: id }, function(err) {
+    Brewery.remove({ _id: id }, function(err) {
         if (err) {
             console.log(err);
             res.end(err);

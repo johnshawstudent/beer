@@ -13,7 +13,7 @@ var brewerySchema = new mongoose.Schema({
         trim: true,
         required: 'Title cannot be blank'
     },
-    content: {
+    about: {
         type: String,
         default: ''
     },
@@ -30,7 +30,7 @@ var brewerySchema = new mongoose.Schema({
       default: ''
     },
     yearfounded: {
-      type: Number,
+      type: String,
       default: ''
     }
 });
