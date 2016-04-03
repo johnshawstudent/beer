@@ -9,6 +9,5 @@ router.get('/', function(req, res, next) {
 });
 
 
-
 // make this public so the rest of app can see it
 module.exports = router;

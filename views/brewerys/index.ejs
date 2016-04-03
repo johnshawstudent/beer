@@ -9,23 +9,36 @@
     Add a new brewery
     </button></a>
 
-    <ul class="brewery-list">
+    <table class="brewery-list">
+        <thead><tr><td>Brewery</td><td>About</td><td>Types of Beer</td><td>Location</td><td>Phone Number</td><td>Established</td><td></td></tr></thead>
         <% for (var i = 0; i < brewerys.length; i++) { %>
-            <li class="brewery-list-item">
+            <tr>
+            <td class="brewery-title">
                 <!-- link to /brewerys/:id -->
-                <h4><a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
-                    <%= brewerys[i].title %></a></h4>
-            </li>
-            <li class="brewery-details">
                 <a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
-                <%= brewerys[i].about %></a>
-            </li>
-            <li class="brewery-details">
-                <a href="/brewerys/<%= brewerys[i]._id%>" title="Brewery Details">
+                    <%= brewerys[i].title %></a>
+            </td>
+            <td class="brewery-about">
+                <%= brewerys[i].about %>
+            </td>
+            <td class="brewery-beertypes">
                 <%= brewerys[i].beertypes %></a>
-            </li>
+            </td>
+            <td class="brewery-city">
+                <%= brewerys[i].city %></a>
+            </td>
+            <td class="brewery-phone">
+                <%= brewerys[i].phone %></a>
+            </td>
+            <td class="brewery-yearfounded">
+                <%= brewerys[i].yearfounded %></a>
+            </td>
+            <td class="brewery-yearfounded">
+                <a href="/brewerys/<%= brewerys[i]._id%>"><button class="waves-effect waves-light btn-small">Edit</button></a>
+            </td>
+            </tr>
         <% } %>
-    </ul>
+    </table>
 </main>
 
 </body>
