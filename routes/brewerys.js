@@ -74,7 +74,7 @@ router.get('/:id', isLoggedIn, function(req, res, next) {
 });
 
 // POST handler for edit to update the brewery
-router.post('/:id', isLoggedIn, function(req, res, next) {
+router.post('/:id', function(req, res, next) {
     // create an id variable to store the id from the url
     var id = req.params.id;
 
